@@ -2,12 +2,13 @@
  * criado em 30/05/2017 
  */
 
-angular.module('starter')
-.controller(
-	'ListagemController',
-	function ($scope) {
-	    
-	    $scope.listaDeCarros = [
+var moduloPrincipal = angular.module('starter');
+
+moduloPrincipal.controller(
+'ListagemController',
+function ($scope) {
+    	
+    	$scope.listaDeCarros = [
 		'BMW 120i',
 		'ONIX 1.6',
 		'Fiesta 2.0',
@@ -20,8 +21,9 @@ angular.module('starter')
 		'Montana Cabine dupla',	
 		'Outlander 2.4',  
 		'Fusca 1500'];
-	    
-	    
+    	$scope.data = '01/10/2016';
+}
 	
-	}
+	
+
 )
