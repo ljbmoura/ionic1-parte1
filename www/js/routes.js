@@ -13,5 +13,11 @@ angular.module('starter').config(function($stateProvider, $urlRouterProvider) {
 	templateUrl : 'templates/carroescolhido.html',
 	controller : 'CarroEscolhidoController'
     })
+    
+    .state('finalizarpedido', {
+	url: '/finalizarpedido/:carro',
+	templateUrl: 'templates/finalizarpedido.html',
+	controller: 'FinalizarPedidoController'
+    })
 
 });
