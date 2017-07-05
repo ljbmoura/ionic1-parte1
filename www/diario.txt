@@ -1,0 +1,34 @@
+24/05/2017
+
+ionic start AluraCar blank --type ionic1
+	cria um projeto inicial compatível com Ionic 1
+	
+ionic link
+	create a new app --> AluraCar --> https://apps.ionic.io/app/f70326e2/overview
+
+ionic login
+	ljbmoura@gmail.com
+	il...
+	
+na pasta D:\luciano\treinamento2017\ionic1-parte1\AluraCar
+	git remote add origin https://github.com/ljbmoura/ionic1-parte1.git
+	git push -u origin master	
+
+ionic serve --lab (ou -l)
+	abrir aplicação em localhost:8100/ionic-lab
+	
+30/06/2017
+- reiniciando o curso
+
+- usando git manualmente
+	git status
+	git add "caminho arquivo"
+	git commit -m "comentário"
+	git push -u origin aulas3e4
+	git remote -v
+	git fetch X git pull: fetch não faz merge, pull faz
+	git checkout master: troca branch do atual (aulas3e4) para o "master"
+	git merge aulas3e4: faz o merge do branch "aulas3e4" para o atual ("master")
+	git checkout -b aula5: cria novo branch "aula5" e troca para ele
+	
+

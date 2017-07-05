@@ -8,8 +8,8 @@
 		<div class="item item-divider">Ótima Escolha</div>
 	
 		<div class="item item-text-wrap">
-		<ul class="list">
 		{{carroEscolhido.nome}}
+		<ul class="list">
 			<li class="item item-toggle" ng-repeat="acessorio in listaDeAcessorios">
 				{{acessorio.nome}} (R{{acessorio.preco | currency}}) 
 				<label class="toggle toggle-assertive"> 
@@ -22,11 +22,6 @@
 					</div>
 				</label>
 			</li>
-		
-			<li class="item item-toggle"> 
-
-			</li>
-		
 		</ul>
 		</div>
 	
