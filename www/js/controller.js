@@ -21,11 +21,26 @@ moduloPrincipal.controller('ListagemController', function($scope) {
     }, {
 	nome : "Fusca 1500",
 	preco : 973000
-    } 
+    }
+    ,{nome : "Outlander 2.4", preco : 99000}
     ];
     // "Fiesta 2.0", "C3 1.0", "Uno Fire", "Sentra 2.0", "Astra Sedan",
     // "Vectra 2.0 Turbo", "Hilux 4x4", "Montana Cabine dupla", "Outlander 2.4",
     // "Fusca 1500"
+    
+/*    [{"nome" : "BMW 120i" , "preco" : 70000},
+        {"nome" : "Onix 1.6" , "preco" : 35000},
+        {"nome" : "Fiesta 2.0", "preco" : 52000},
+        {"nome" : "C3 1.0", "preco" : 22000},
+        {"nome" : "Uno Fire", "preco" : 11000},
+        {"nome" : "Sentra 2.0", "preco" : 53000},
+        {"nome" : "Astra Sedan", "preco" : 39000},
+        {"nome" : "Vectra 2.0", "preco" : 37000},
+        {"nome" : "Hilux 4x4", "preco" : 90000},
+        {"nome" : "Montana Cabine dupla", "preco" : 57000},
+        {"nome" : "Outlander 2.4", "preco" : 99000},
+        {"nome" : "Fusca 15000", "preco" : 6000}
+      ];*/    
 
 });
 
@@ -50,9 +65,17 @@ moduloPrincipal.controller('CarroEscolhidoController', function($scope, $statePa
 });
 
 
-moduloPrincipal.controller('FinalizarPedidoController', function($stateParams, $scope) {
+moduloPrincipal.controller('FinalizarPedidoController', function($stateParams, $scope, $ionicPopup, $state) {
     
     $scope.carroFinalizado = angular.fromJson($stateParams.carro);
     
-	
+    $scope.finalizarPedido = function() {
+	$ionicPopup.alert({
+	    title: 'Parabéns', // String. The title of the popup.
+	    template: 'Você acaba de comprar um carro',
+	    okText: 'Sonho Realizado' // String (default: 'OK'). The text of the OK button.
+	}).then(function() {
+	    $state.go('listagem');
+	});
+    }
 })
