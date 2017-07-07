@@ -4,9 +4,16 @@
 
 var moduloPrincipal = angular.module('starter');
 
-moduloPrincipal.controller('ListagemController', function($scope) {
+moduloPrincipal.controller('ListagemController', function($scope, CarroService) {
 
-    $scope.listaDeCarros = [ {
+    CarroService.obterCarros().then(function(value) {
+	$scope.listaDeCarros = value;
+//    }, function(reason) {
+//    	
+//    }, function(value) {
+//    	
+    });
+/*    $scope.listaDeCarros = [ {
 	nome : "BMW 120i",
 	preco : 100000.00
     }, {
@@ -24,10 +31,7 @@ moduloPrincipal.controller('ListagemController', function($scope) {
     }
     ,{nome : "Outlander 2.4", preco : 99000}
     ];
-    // "Fiesta 2.0", "C3 1.0", "Uno Fire", "Sentra 2.0", "Astra Sedan",
-    // "Vectra 2.0 Turbo", "Hilux 4x4", "Montana Cabine dupla", "Outlander 2.4",
-    // "Fusca 1500"
-    
+*/    
 /*    [{"nome" : "BMW 120i" , "preco" : 70000},
         {"nome" : "Onix 1.6" , "preco" : 35000},
         {"nome" : "Fiesta 2.0", "preco" : 52000},
