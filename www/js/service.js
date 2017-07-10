@@ -9,15 +9,29 @@ moduloPrincipal.service('CarroService', function($http) {
     
     return {
 	obterCarros: function () {
-	return $http.get(url).then(function(listaCarros) {
+	  return $http.get(url).then(
+	    function(listaCarros) {
 		//console.debug(listaCarros.data);
 	    	return listaCarros.data;
-	    }, function(reason) {
+	    }
+	    , function(reason) {
 	    	console.log('Erro GET ' + url + ' : ' + reason.statusText);
-	    //}, function(value) {
-	    //	
-	    })
+	    }
+	  )
+	}
+    
+    	,salvarPedido: function(pedido) {
+	  return $http.get(url + 'salvarpedido', pedido).then(
+	    function(reposta) {
+		console.log('pedido acolhido com sucesso:' + repostaOk);
+		return reposta;
+	    }
+	  )
+	  
+
 	}
     }
+    
+    
 	
 })

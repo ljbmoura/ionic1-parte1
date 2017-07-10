@@ -6,8 +6,8 @@ var moduloPrincipal = angular.module('starter');
 
 moduloPrincipal.controller('ListagemController', function($scope, CarroService) {
 
-    CarroService.obterCarros().then(function(value) {
-	$scope.listaDeCarros = value;
+    CarroService.obterCarros().then(function(carros) {
+	$scope.listaDeCarros = carros;
 //    }, function(reason) {
 //    	
 //    }, function(value) {
@@ -69,17 +69,42 @@ moduloPrincipal.controller('CarroEscolhidoController', function($scope, $statePa
 });
 
 
-moduloPrincipal.controller('FinalizarPedidoController', function($stateParams, $scope, $ionicPopup, $state) {
+moduloPrincipal.controller('FinalizarPedidoController', function($stateParams, $scope, $ionicPopup, $state, CarroService) {
     
     $scope.carroFinalizado = angular.fromJson($stateParams.carro);
     
+    $scope.pedido = {};
+    
     $scope.finalizarPedido = function() {
-	$ionicPopup.alert({
-	    title: 'Parabéns', // String. The title of the popup.
-	    template: 'Você acaba de comprar um carro',
-	    okText: 'Sonho Realizado' // String (default: 'OK'). The text of the OK button.
-	}).then(function() {
-	    $state.go('listagem');
-	});
+	
+	var pedidoCompleto = {
+	params: {
+        	    carro: $scope.carroFinalizado.nome,
+            	    preco: $scope.carroFinalizado.preco,
+            	    nome: $scope.pedido.nome,
+            	    endereco: $scope.pedido.endereco,
+            	    email: $scope.pedido.email
+        	}
+	};
+	
+	CarroService.salvarPedido(pedidoCompleto)
+	.then(function(dados) {
+	    console.debug(dados);
+	    $ionicPopup.alert({
+		title: 'Parabéns', // String. The title of the popup.
+		template: 'Você acaba de comprar um carro',
+		okText: 'Sonho Realizado, modelo:'  // String (default: 'OK'). The text of the OK button.
+	    }).then(function() {
+		$state.go('listagem');
+	    });
+	})
+	,function(erro){
+	    console.log(erro);
+	    	    $ionicPopup.alert({
+	    	      title: 'Deu erro',
+	    	      template: 'Campos obrigatórios'
+	    	      })
+	}
+	
     }
 })
