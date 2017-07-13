@@ -1,7 +1,7 @@
 24/05/2017
 
 ionic start AluraCar blank --type ionic1
-	cria um projeto inicial compatível com Ionic 1
+	cria um projeto inicial compatï¿½vel com Ionic 1
 	
 ionic link
 	create a new app --> AluraCar --> https://apps.ionic.io/app/f70326e2/overview
@@ -15,7 +15,7 @@ na pasta D:\luciano\treinamento2017\ionic1-parte1\AluraCar
 	git push -u origin master	
 
 ionic serve --lab (ou -l)
-	abrir aplicação em localhost:8100/ionic-lab
+	abrir aplicaï¿½ï¿½o em localhost:8100/ionic-lab
 	
 30/06/2017
 - reiniciando o curso
@@ -23,12 +23,24 @@ ionic serve --lab (ou -l)
 - usando git manualmente
 	git status
 	git add "caminho arquivo"
-	git commit -m "comentário"
+	git commit -m "comentï¿½rio"
 	git push -u origin aulas3e4
 	git remote -v
-	git fetch X git pull: fetch não faz merge, pull faz
+	git fetch X git pull: fetch nï¿½o faz merge, pull faz
 	git checkout master: troca branch do atual (aulas3e4) para o "master"
 	git merge aulas3e4: faz o merge do branch "aulas3e4" para o atual ("master")
 	git checkout -b aula5: cria novo branch "aula5" e troca para ele
+	
+upload para testes via ionic view
+	login usando ljbmoura@gmail.com
+	
+	ionic link: ligou o projeto atravÃ©s do arquivo ionic.config.jsom, campo "app_id": "f70326e2", com o serviÃ§o web em https://apps.ionic.io/
+
+	ionic upload
+	
+	 
+	
+	
+	
 	
 
